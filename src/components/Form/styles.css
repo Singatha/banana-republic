@@ -118,16 +118,12 @@ input[type="submit"] {
 
 @media only screen and (min-width: 992px) {
   form {
-    padding: 40px 20px 50px;
+    padding: 40px 20px 0;
   }
 
   .genders,
   .membership {
     flex-direction: row;
-  }
-
-  .gender-labels {
-    width: 230px;
   }
 
   .member-labels {
@@ -153,5 +149,14 @@ input[type="submit"] {
 
   input[type="button"] {
     margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"] {
+    width: 230px;
   }
 }

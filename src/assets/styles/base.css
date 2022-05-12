@@ -1,7 +1,4 @@
 :root {
-  --ff: sans-serif;
-  --fs: 16px;
-
   --left-panel-bg: #ffd500;
   --right-panel-bg: #ff9200;
 
@@ -9,4 +6,12 @@
   --save-button-bg: #60e6c5;
   --light-bg: #f5f8f9;
   --dark-gray-bg: #b1bfcd;
+}
+
+html,
+body,
+#root,
+.App,
+.Form {
+  height: 100%;
 }

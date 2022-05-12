@@ -1,87 +1,15 @@
 import "./styles.css";
-import card from "../../assets/images/card.svg";
-import cardWhite from "../../assets/images/card--white.svg";
-import mars from "../../assets/images/mars-symbol.svg";
-import marsWhite from "../../assets/images/mars-symbol--white.svg";
-import venus from "../../assets/images/venus-symbol.svg";
-import venusWhite from "../../assets/images/venus-symbol--white.svg";
 
-import { useState } from "react";
 import Gender from "./RadioButtons/Gender";
 import Membership from "./RadioButtons/Membership";
 
 function Form() {
-  const [gender, setGender] = useState({
-    marsChecked: false,
-    venusChecked: false
-  });
-  const [member, setMembership] = useState({
-    classicChecked: false,
-    silverChecked: false,
-    goldChecked: false
-  });
-
-  const handleGender = (event) => {
-    if (event.target.value === "male") {
-      setGender((prevState) => {
-        return { ...prevState, venusChecked: false, marsChecked: true };
-      });
-    } else if (event.target.value === "female") {
-      setGender((prevState) => {
-        return { ...prevState, venusChecked: true, marsChecked: false };
-      });
-    }
-  };
-
-  const handleMember = (event) => {
-    if (event.target.value === "classic") {
-      setMembership((prevState) => {
-        return {
-          ...prevState,
-          classicChecked: true,
-          silverChecked: false,
-          goldChecked: false
-        };
-      });
-    } else if (event.target.value === "silver") {
-      setMembership((prevState) => {
-        return {
-          ...prevState,
-          classicChecked: false,
-          silverChecked: true,
-          goldChecked: false
-        };
-      });
-    } else if (event.target.value === "gold") {
-      setMembership((prevState) => {
-        return {
-          ...prevState,
-          classicChecked: false,
-          silverChecked: false,
-          goldChecked: true
-        };
-      });
-    }
-  };
-
   const handleCancel = () => {
     document.forms["userForm"]["fullname"].value = "";
-    setGender((prevState) => {
-      return { ...prevState, venusChecked: false, marsChecked: false };
-    });
-    document.forms["userForm"]["gender"].checked = false;
     document.forms["userForm"]["dob"].value = "";
     document.forms["userForm"]["email"].value = "";
     document.forms["userForm"]["mobile"].value = "";
     document.forms["userForm"]["customerID"].value = "";
-    setMembership((prevState) => {
-      return {
-        ...prevState,
-        classicChecked: false,
-        silverChecked: false,
-        goldChecked: false
-      };
-    });
   };
 
   return (
@@ -92,14 +20,7 @@ function Form() {
           <input type="text" id="fullname" name="fullname" />
         </div>
 
-        <Gender
-          gender={gender}
-          mars={mars}
-          venus={venus}
-          marsWhite={marsWhite}
-          venusWhite={venusWhite}
-          onHandleGender={handleGender}
-        />
+        <Gender />
 
         <div className="input-label">
           <label htmlFor="dob">Date of Birth</label>
@@ -131,12 +52,7 @@ function Form() {
           />
         </div>
 
-        <Membership
-          member={member}
-          card={card}
-          cardWhite={cardWhite}
-          onHandleMember={handleMember}
-        />
+        <Membership />
 
         <div className="input-label">
           <input type="button" value="Cancel" onClick={handleCancel} />

@@ -1,6 +1,48 @@
-function Membership(props) {
+import card from "../../../assets/images/card.svg";
+import cardWhite from "../../../assets/images/card--white.svg";
+
+import { useState } from "react";
+
+function Membership() {
+  const [member, setMembership] = useState({
+    classicChecked: false,
+    silverChecked: false,
+    goldChecked: false
+  });
+
+  const handleMember = (event) => {
+    if (event.target.value === "classic") {
+      setMembership((prevState) => {
+        return {
+          ...prevState,
+          classicChecked: true,
+          silverChecked: false,
+          goldChecked: false
+        };
+      });
+    } else if (event.target.value === "silver") {
+      setMembership((prevState) => {
+        return {
+          ...prevState,
+          classicChecked: false,
+          silverChecked: true,
+          goldChecked: false
+        };
+      });
+    } else if (event.target.value === "gold") {
+      setMembership((prevState) => {
+        return {
+          ...prevState,
+          classicChecked: false,
+          silverChecked: false,
+          goldChecked: true
+        };
+      });
+    }
+  };
+
   return (
-    <div className="membership" onChange={props.onHandleMember}>
+    <div className="membership" onChange={handleMember}>
       <p>Membership</p>
       <div className="member-labels">
         <label htmlFor="classic">
@@ -9,14 +51,10 @@ function Membership(props) {
             id="classic"
             name="membership"
             value="classic"
-            defaultChecked={props.member.classicChecked}
+            checked={member.classicChecked}
           />
           <img
-            src={
-              props.member.classicChecked === true
-                ? props.cardWhite
-                : props.card
-            }
+            src={member.classicChecked === true ? cardWhite : card}
             alt="Card Icon"
           />
           Classic
@@ -28,12 +66,10 @@ function Membership(props) {
             id="silver"
             name="membership"
             value="silver"
-            defaultChecked={props.member.silverChecked}
+            checked={member.silverChecked}
           />
           <img
-            src={
-              props.member.silverChecked === true ? props.cardWhite : props.card
-            }
+            src={member.silverChecked === true ? cardWhite : card}
             alt="Card Icon"
           />
           Silver
@@ -45,12 +81,10 @@ function Membership(props) {
             id="gold"
             name="membership"
             value="gold"
-            defaultChecked={props.member.goldChecked}
+            checked={member.goldChecked}
           />
           <img
-            src={
-              props.member.goldChecked === true ? props.cardWhite : props.card
-            }
+            src={member.goldChecked === true ? cardWhite : card}
             alt="Card Icon"
           />
           Gold

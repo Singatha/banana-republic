@@ -5,10 +5,10 @@ import LeftPanel from "../LeftPanel/LeftPanel";
 
 export default function App() {
   return (
-    <div id="App">
+    <div className="App">
       <LeftPanel />
       <Form />
-      <div className="overlay" id="overlay">
+      <div className="Form overlay" id="overlay">
         <h1>My world today</h1>
         <p>
           Pellentesque habitant morbi tristique senectus et netus et malesuada
@@ -27,8 +27,3 @@ export default function App() {
     </div>
   );
 }
-
-// What's left?
-// fix transitioning on the arrow button
-// fix desktop design
-// refactor code

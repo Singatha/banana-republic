@@ -1,25 +1,41 @@
 import "./styles.css";
-// import "../App/styles.css";
 import avatar from "../../assets/images/face.svg";
 import arrow from "../../assets/images/arrow.svg";
 import { useState } from "react";
 
 function LeftPanel() {
-  const [toggle, setToggle] = useState(false);
+  const [toggleBtm, setToggleBtm] = useState(false);
+  const [toggleSide, setToggleSide] = useState(false);
 
   const handleArrowClick = () => {
-    const val = document.getElementById("App").style;
-    console.log(val);
-    if (toggle === false) {
-      document.getElementById("arrow-btn").style.transform = "rotate(-90deg)";
-      document.getElementById("overlay").style.display = "block";
-      document.getElementById("overlay").style.height = "987px";
-      setToggle(true);
+    if (window.innerWidth >= 922) {
+      document.getElementById("arrow-btn").style.transform = "rotate(-360deg)";
+      if (toggleSide === false) {
+        document.getElementById("arrow-btn").style.transform =
+          "rotate(-360deg)";
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay").style.width = "439.41px";
+        setToggleSide(true);
+      } else {
+        document.getElementById("arrow-btn").style.transform = "rotate(180deg)";
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("overlay").style.width = "0";
+        setToggleSide(false);
+      }
     } else {
-      document.getElementById("arrow-btn").style.transform = "rotate(90deg)";
-      document.getElementById("overlay").style.display = "none";
-      document.getElementById("overlay").style.height = "0";
-      setToggle(false);
+      document.getElementById("arrow-btn").style.transform = "rotate(-360deg)";
+      if (toggleBtm === false) {
+        document.getElementById("arrow-btn").style.transform = "rotate(-90deg)";
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay").style.height = "100%";
+        document.getElementById("overlay").scrollIntoView();
+        setToggleBtm(true);
+      } else {
+        document.getElementById("arrow-btn").style.transform = "rotate(90deg)";
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("overlay").style.height = "0";
+        setToggleBtm(false);
+      }
     }
   };
 
