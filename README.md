@@ -6,7 +6,9 @@ A frontend-challenge by Platform45.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./src/assets/images/screenshot_1.png)
+
+![App Screenshot](./src/assets/images/screenshot_2.png)
 
 ## Run Locally
 

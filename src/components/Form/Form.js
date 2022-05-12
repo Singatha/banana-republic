@@ -54,7 +54,7 @@ function Form() {
 
         <Membership />
 
-        <div className="input-label">
+        <div className="input-label right">
           <input type="button" value="Cancel" onClick={handleCancel} />
           <input type="submit" value="Save" />
         </div>

@@ -14,7 +14,7 @@ function LeftPanel() {
         document.getElementById("arrow-btn").style.transform =
           "rotate(-360deg)";
         document.getElementById("overlay").style.display = "block";
-        document.getElementById("overlay").style.width = "439.41px";
+        document.getElementById("overlay").style.width = "auto";
         setToggleSide(true);
       } else {
         document.getElementById("arrow-btn").style.transform = "rotate(180deg)";
