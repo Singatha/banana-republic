@@ -1,0 +1,64 @@
+@import "../../assets/styles/base.css";
+
+.left-panel {
+  background-color: var(--left-panel-bg);
+  padding: 30px;
+}
+
+.left-panel > img {
+  display: block;
+  width: 200px;
+  margin: 60px auto;
+}
+
+.left-panel h1,
+.left-panel p {
+  color: var(--dark-brown-bg);
+  text-align: center;
+}
+
+.left-panel p {
+  font-size: 16px;
+}
+
+.arrow-button {
+  background-color: var(--dark-brown-bg);
+  border: none;
+  border-radius: 50%;
+  display: block;
+  transform: rotate(90deg);
+  padding: 10px 15px;
+  margin: 30px auto 50px;
+}
+
+.arrow-button > img {
+  display: block;
+}
+
+/* @media only screen and (min-width: 320px) {
+} */
+
+/* @media screen and (min-width: 600px) {
+} */
+
+/* @media only screen and (min-width: 768px) {
+  .left-panel {
+    width: 320px;
+    padding: 10px;
+  }
+
+  .arrow-button {
+    transform: rotate(-360deg);
+  }
+} */
+
+@media only screen and (min-width: 992px) {
+  .left-panel {
+    width: 320px;
+    padding: 50px;
+  }
+
+  .arrow-button {
+    transform: rotate(-360deg);
+  }
+}

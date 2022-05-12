@@ -1,0 +1,157 @@
+@import "../../assets/styles/base.css";
+
+form {
+  padding: 50px 20px 40px;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label,
+.genders,
+.membership {
+  margin: 0 0 20px;
+}
+
+label {
+  margin: 0 0 10px;
+}
+
+.genders,
+.membership {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(100% - 10px);
+}
+
+.gender-labels,
+.member-labels {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.member-labels {
+  flex-wrap: wrap;
+}
+
+.gender-labels label,
+.member-labels label {
+  display: flex;
+  align-items: center;
+}
+
+.gender-labels img,
+.member-labels img {
+  background-color: var(--light-bg);
+  border-radius: 50%;
+  height: 45px;
+  max-width: 26px;
+  margin: 0 10px 0 0;
+  padding: 3px 13px;
+  width: 100%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml, %3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23B1BFCD%22%20stroke-linecap%3D%22square%22%20stroke-width%3D%222.442%22%20d%3D%22M2%203.602h15.87v14.407H2z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23B1BFCD%22%20stroke-linecap%3D%22square%22%20stroke-width%3D%224.885%22%20d%3D%22M3.22%206.003H16.65%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23F5F8F9%22%20stroke-width%3D%224.885%22%20d%3D%22M14.207%200v6.003%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23B1BFCD%22%20stroke-width%3D%222.442%22%20d%3D%22M14.207%200v4.802%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23F5F8F9%22%20stroke-width%3D%224.885%22%20d%3D%22M5.662%200v6.003%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23B1BFCD%22%20stroke-width%3D%222.442%22%20d%3D%22M5.662%200v4.802%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
+  background-repeat: no-repeat;
+  height: 20px;
+  opacity: 1;
+  width: 20px;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked + img {
+  background-color: var(--dark-gray-bg);
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"] {
+  border-radius: 4px;
+  border: 1px solid var(--dark-gray-bg);
+  font-family: sans-serif;
+  font-size: 16px;
+  height: 40px;
+  outline: none;
+  padding: 0 10px;
+  width: calc(100% - 30px);
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus {
+  border: 2px solid var(--dark-gray-bg);
+}
+
+input[type="button"],
+input[type="submit"] {
+  border: none;
+  border-radius: 8px;
+  font-family: sans-serif;
+  display: block;
+  margin: 0 auto;
+  padding: 15px;
+  text-transform: uppercase;
+  width: calc(100% - 10px);
+}
+
+input[type="button"] {
+  background-color: var(--light-bg);
+  margin: 0 auto 8px;
+}
+
+input[type="submit"] {
+  background-color: var(--save-button-bg);
+  color: white;
+}
+
+@media only screen and (min-width: 992px) {
+  form {
+    padding: 40px 20px 50px;
+  }
+
+  .genders,
+  .membership {
+    flex-direction: row;
+  }
+
+  .gender-labels {
+    width: 230px;
+  }
+
+  .member-labels {
+    justify-content: flex-end;
+  }
+
+  .input-label {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="date"] {
+    width: 210px;
+  }
+
+  input[type="button"],
+  input[type="submit"] {
+    width: 150px;
+  }
+
+  input[type="button"] {
+    margin: 0 auto;
+  }
+}

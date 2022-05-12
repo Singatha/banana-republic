@@ -1,0 +1,51 @@
+@import "../../assets/styles/base.css";
+
+html,
+body,
+.left-panel {
+  height: 100%;
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  position: relative;
+}
+
+#overlay {
+  background-color: var(--right-panel-bg);
+  color: var(--dark-brown-bg);
+  display: none;
+  top: 39%;
+  left: 0;
+  right: 0;
+  height: 0;
+  padding: 50px 15px 70px;
+  position: absolute;
+  transition: 0.5s ease;
+}
+
+.overlay h1 {
+  text-align: center;
+}
+
+.overlay a {
+  color: var(--dark-brown-bg);
+  font-weight: bold;
+}
+
+/* @media only screen and (min-width: 320px) {
+}
+
+@media screen and (min-width: 600px) {
+} */
+
+/* @media only screen and (min-width: 768px) {
+} */
+
+@media only screen and (min-width: 992px) {
+  #App {
+    flex-direction: row;
+  }
+}
